@@ -1,0 +1,12 @@
+{
+  "name": "EasyRoom",
+  "version": "1.0.0",
+  "description": "A lightweight gRPC-based service for managing room bookings",
+  "repository": "https://github.com/MUSTAFA-Hamzawy/EasyRoom.git",
+  "author": "Mustafa Mahmoud <hamzawy2019579@gmail.com>",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.12.2",
+    "@grpc/proto-loader": "^0.7.13",
+    "ts-proto": "^2.2.7"
+  }
+}
