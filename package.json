@@ -4,9 +4,19 @@
   "description": "A lightweight gRPC-based service for managing room bookings",
   "repository": "https://github.com/MUSTAFA-Hamzawy/EasyRoom.git",
   "author": "Mustafa Mahmoud <hamzawy2019579@gmail.com>",
+  "scripts": {
+    "server": "npx tsc && npx ts-node src/server.ts",
+    "client": "npx tsc && npx ts-node src/client.ts"
+  },
   "dependencies": {
+    "@faker-js/faker": "^9.2.0",
     "@grpc/grpc-js": "^1.12.2",
     "@grpc/proto-loader": "^0.7.13",
     "ts-proto": "^2.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
   }
 }
