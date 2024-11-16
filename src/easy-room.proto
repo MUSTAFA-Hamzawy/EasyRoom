@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+service EasyRoom {
+  rpc ListAvailableRooms (Empty) returns (RoomList) {}
+  rpc GetRoomDetails (RoomNumber) returns (RoomInfoResponse) {}
+  rpc AddRoom (Room) returns (RoomAddedResponse) {}
+  rpc BookRoom (RoomNumber) returns (BookingResponseBody) {}
+  rpc CheckRoomAvailability (RoomNumber) returns (RoomAvailability) {}
+}
+
+message Room {
+  string roomNumber = 1;
+  bool isAvailable = 2;
+  RoomType roomType = 3;   // single, double
+  float pricePerNight = 4;
+  repeated string amenities = 5;   // e.g ['wifi', 'tv', ..]
+  string description = 6;
+  repeated string images = 7;
+}
+
+enum RoomType {
+  SINGLE = 0;
+  DOUBLE = 1;
+}
+
+message Empty {}
+
+message RoomList {
+  repeated Room roomList = 1;
+  string message = 2;
+}
+
+message RoomNumber {
+  string roomNumber = 1;
+}
+
+message RoomAvailability {
+  bool availability = 1;
+}
+
+message RoomInfoResponse {
+  string message = 1;
+  Room room = 2;
+}
+
+message RoomAddedResponse {
+  string message = 1;
+  Room room = 2;
+}
+
+message BookingResponseBody {
+  string message = 1;
+}
